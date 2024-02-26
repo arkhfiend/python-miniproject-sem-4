@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <!-- Add any additional CSS styles or links here -->
+</head>
+<body>
+
+    <header>
+        <h1>Manage Users</h1>
+        <!-- Add any header content here -->
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('admin.admin_dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('admin.manage_users') }}">Manage Users</a></li>
+            <!-- Add additional navigation links as needed -->
+        </ul>
+    </nav>
+
+    <section>
+        <h2>User List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <!-- Add more columns as needed -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <!-- Display more user information as needed -->
+                        <td>
+                            <!-- Add actions like edit, delete, etc. -->
+                            <a href="{{ url_for('admin.edit_user', user_id=user.id) }}">Edit</a>
+                            <a href="{{ url_for('admin.delete_user', user_id=user.id) }}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <a href="#">Contact Us</a>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

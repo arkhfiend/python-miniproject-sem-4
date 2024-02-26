@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily News</title>
+    <!-- Add any additional CSS styles or links here -->
+</head>
+<body>
+
+    <header>
+        <h1>Daily News</h1>
+        <!-- Add any header content here -->
+    </header>
+
+    <section>
+        <h2>Latest Updates</h2>
+        <!-- Loop through your news data and display it here -->
+        <div class="news-container">
+            {% for news_item in news_data %}
+                <div class="news-item">
+                    <h3>{{ news_item.title }}</h3>
+                    <p>{{ news_item.content }}</p>
+                    <p>Published on: {{ news_item.publish_date }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <h2>Educational Content</h2>
+        <!-- Include informative articles, quizzes, or educational content here -->
+        <div class="educational-content">
+            <!-- Add your educational content here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <a href="#">Contact Us</a>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

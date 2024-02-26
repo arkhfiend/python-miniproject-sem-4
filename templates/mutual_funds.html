@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Funds</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+
+        <form action="/filter_funds" method="post">
+            <label for="risk_tolerance">Risk Tolerance:</label>
+            <select name="risk_tolerance" id="risk_tolerance">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+    
+            <label for="investment_goals">Investment Goals:</label>
+            <input type="text" name="investment_goals" id="investment_goals">
+    
+            <label for="fund_category">Fund Category:</label>
+            <select name="fund_category" id="fund_category">
+                <option value="equity">Equity</option>
+                <option value="debt">Debt</option>
+                <option value="balanced">Balanced</option>
+            </select>
+    
+            <button type="submit">Search</button>
+        </form>
+        <h1>Mutual Funds</h1>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for fund in mutual_funds %}
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ fund.name }}</h5>
+                            <p class="card-text">Fund Type: {{ fund.fund_type }}</p>
+                            <p class="card-text">NAV: {{ fund.nav }}</p>
+                            <p class="card-text">Returns: {{ fund.returns }}</p>
+                            <p class="card-text">Risk Tolerence: {{ fund.risk_tolerance }}</p>
+                            <a href="/view/{{ fund.id }}" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

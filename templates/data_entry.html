@@ -1,0 +1,40 @@
+<!-- data_entry.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry Form</title>
+</head>
+<body>
+    <h1>Data Entry Form</h1>
+     <!-- Add a link to navigate to the list of mutual funds -->
+     <p><a href="/mutual_funds">View Mutual Funds</a></p>
+     
+    <form action="/submit_data" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        
+        <label for="fund_type">Fund Type:</label>
+        <input type="text" name="fund_type" required><br>
+        
+        <label for="nav">Net Asset Value (NAV):</label>
+        <input type="number" name="nav" step="0.01" required><br>
+        
+        <label for="returns">Returns:</label>
+        <input type="number" name="returns" step="0.01" required><br>
+
+                <!-- Add the Risk Tolerance field -->
+                <label for="risk_tolerance">Risk Tolerance:</label>
+                <select name="risk_tolerance" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select><br>
+        
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

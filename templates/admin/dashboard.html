@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Add any additional CSS styles or links here -->
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Admin Dashboard</h1>
+        <!-- Add any header content here -->
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('admin.admin_dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('admin.manage_users') }}">Manage Users</a></li>
+            <li><a href="{{ url_for('data_entry') }}">Add Funds</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <!-- Add additional navigation links as needed -->
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Dashboard Content</h2>
+        <!-- Add the specific content for your admin dashboard here -->
+        <p>This is where you can display various statistics, information, or actions available to administrators.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <a href="#">Contact Us</a>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

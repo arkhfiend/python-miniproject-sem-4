@@ -1,0 +1,42 @@
+<!-- filter_funds.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Funds</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Filtered Funds</h1>
+
+        {% if filtered_funds %}
+            <div class="row">
+                {% for fund in filtered_funds %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ fund.name }}</h5>
+                                <p class="card-text"><strong>Fund Type:</strong> {{ fund.fund_type }}</p>
+                                <p class="card-text"><strong>NAV:</strong> {{ fund.nav }}</p>
+                                <p class="card-text"><strong>Returns:</strong> {{ fund.returns }}</p>
+                                <p class="card-text"><strong>Risk Tolerance:</strong> {{ fund.risk_tolerance }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No funds found based on the selected criteria.</p>
+        {% endif %}
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
